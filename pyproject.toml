@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "nexus-ai-gateway"
+version = "0.1.0"
+description = "High-performance AI Inference Gateway"
+authors = ["Somrat Sheikh <somratsheikh426@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+# We will add FastAPI/Redis here later
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.0"
+pytest = "^8.0.0"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# --- RUFF CONFIGURATION (The "Strict" Standard) ---
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+# E: Pycodestyle, F: Pyflakes, I: Isort (Import sorting), B: Bugbear (Best practices)
+select = ["E", "F", "I", "B"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# --- PYTEST CONFIGURATION ---
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
