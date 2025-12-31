@@ -50,7 +50,7 @@ poetry run pre-commit install
 
 # 4. Run the Server
 poetry run uvicorn src.nexus_ai_gateway.main:app --reload
-'''
+```
 
 ## 📖 API Documentation
 
