@@ -39,7 +39,7 @@ We enforce code quality *before* the commit happens. The `.pre-commit-config.yam
 ### Quick Start
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/YOUR_USERNAME/nexus-ai-gateway.git](https://github.com/YOUR_USERNAME/nexus-ai-gateway.git)
+git clone https://github.com/Somrat390/nexus-ai-gateway
 cd nexus-ai-gateway
 
 # 2. Install dependencies (Deterministic)
@@ -50,24 +50,22 @@ poetry run pre-commit install
 
 # 4. Run the Server
 poetry run uvicorn src.nexus_ai_gateway.main:app --reload
+'''
 
-📖 API Documentation
+## 📖 API Documentation
+
 Once the server is running, access the auto-generated Swagger UI:
 
-Swagger UI: http://localhost:8000/docs
+* **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
+* **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
-ReDoc: http://localhost:8000/redoc
+### Core Endpoints
+* `GET /health`: Health check for Kubernetes/Load Balancers.
 
-Core Endpoints
-GET /health: Health check for Kubernetes/Load Balancers.
+## 🤝 Contributing
 
-🤝 Contributing
-Fork the repository.
-
-Create a feature branch (git checkout -b feature/amazing-feature).
-
-Commit your changes (Pre-commit will verify your code).
-
-Push to the branch.
-
-Open a Pull Request.
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes (**Pre-commit will verify your code**).
+4. Push to the branch.
+5. Open a Pull Request.
