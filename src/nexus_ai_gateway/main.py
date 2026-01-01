@@ -2,6 +2,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from src.nexus_ai_gateway.schemas import PredictionRequest, PredictionResponse
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -23,3 +25,12 @@ app = FastAPI(
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "version": "1.0.0", "mode": "production"}
+
+
+@app.post("/predict", response_model=PredictionResponse)
+async def predict(request: PredictionRequest):
+    print(f"Received prediction request: {request.model_name}")
+    mock_result = "AI processing complete..."
+    return PredictionResponse(
+        status="success", result=mock_result, model_used=request.model_name
+    )
