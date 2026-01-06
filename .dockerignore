@@ -1,0 +1,14 @@
+# Exclude git history (saves space)
+.git
+.gitignore
+
+# Exclude local virtual environments (CRITICAL: Windows libs won't run on Linux)
+.venv
+__pycache__
+
+# Exclude testing caches
+.pytest_cache
+.coverage
+
+# Exclude IDE settings
+.vscode
